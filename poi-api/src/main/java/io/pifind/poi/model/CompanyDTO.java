@@ -1,8 +1,11 @@
 package io.pifind.poi.model;
 
+import lombok.Data;
+
 /**
  * 公司实体类
  */
+@Data
 public class CompanyDTO {
 
     /**
@@ -19,5 +22,10 @@ public class CompanyDTO {
      * 公司详细地址
      */
     private String address;
+
+    /**
+     * 行政区ID
+     */
+    private Long administrativeAreaId;
 
 }

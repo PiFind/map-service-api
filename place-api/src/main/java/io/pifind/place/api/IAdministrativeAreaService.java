@@ -35,7 +35,7 @@ public interface IAdministrativeAreaService {
      * @return 返回值类型为 {@link AdministrativeAreaDTO}
      * <p>
      *     <ul>
-     *         <li><b>存在行政区ID</b> - 返回 {@link AdministrativeAreaDTO 行政区实体} </li>
+     *         <li><b>存在行政区ID</b> - 返回 {@link AdministrativeAreaDTO 行政区实体对象} </li>
      *         <li><b>不存在行政区ID</b> - 返回 {@code null}</li>
      *     </ul>
      * </p>

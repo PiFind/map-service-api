@@ -4,8 +4,9 @@
 
 ## 模块介绍
 
+* [common](common/README.md) : API中一些通用的模型和常量（枚举）定义
 * [place-api](place-api/README.md) : 地点服务标准接口和模型定义的模块
-* [poi](poi-api/README.md) : POI(Point of Interest, 兴趣点) 服务标准接口和模型定义的包
+* [poi-api](poi-api/README.md) : POI(Point of Interest, 兴趣点) 服务标准接口和模型定义的模块
 
 ## Maven 引入方式
 
