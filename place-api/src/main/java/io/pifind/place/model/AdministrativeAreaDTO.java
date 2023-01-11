@@ -10,19 +10,29 @@ import java.util.List;
 @Data
 public class AdministrativeAreaDTO {
 
-    /** 当前的行政区ID */
+    /**
+     * 当前的行政区ID
+     */
     private Long id;
 
-    /** 管辖当前行政区的上级行政区ID */
+    /**
+     * 管辖当前行政区的上级行政区ID
+     */
     private Long superior;
 
-    /** 行政区名 */
+    /**
+     * 行政区名
+     */
     private String name;
 
-    /** 行政区等级 */
+    /**
+     * 行政区等级
+     */
     private Integer level;
 
-    /** 管辖地 */
+    /**
+     * 管辖地
+     */
     private List<AdministrativeAreaDTO> areas;
 
 }
