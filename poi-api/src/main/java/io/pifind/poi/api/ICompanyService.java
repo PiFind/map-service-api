@@ -1,14 +1,10 @@
 package io.pifind.poi.api;
 
-import io.pifind.common.response.Page;
 import io.pifind.common.response.R;
-import io.pifind.place.model.AdministrativeAreaDTO;
-import io.pifind.poi.model.CategoryDTO;
 import io.pifind.poi.model.CompanyDTO;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 /**
  * 公司服务
