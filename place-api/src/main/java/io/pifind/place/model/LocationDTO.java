@@ -37,13 +37,8 @@ public class LocationDTO {
     private CoordinateDTO coordinate;
 
     /**
-     * 定位到的行政区
-     * <p>
-     *     <font style="color:red;">
-     *     <b>注意：</b> 只定位一层深度，即返回值的 {@link AdministrativeAreaDTO#getAreas()} 为 {@code null}
-     *     </font>
-     * </p>
+     * 定位到的行政区ID
      */
-    private AdministrativeAreaDTO administrativeArea;
+    private Long administrativeAreaId;
 
 }
