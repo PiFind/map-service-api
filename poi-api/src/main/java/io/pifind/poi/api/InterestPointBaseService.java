@@ -3,6 +3,9 @@ package io.pifind.poi.api;
 import io.pifind.common.response.R;
 import io.pifind.poi.model.InterestPointDTO;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 /**
  * 兴趣点基础服务
  * <p>
@@ -20,7 +23,7 @@ public interface InterestPointBaseService {
      *     <li><b>添加兴趣点失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> addInterestPoint(InterestPointDTO interestPoint);
+    R<Boolean> addInterestPoint(@NotNull InterestPointDTO interestPoint);
 
     /**
      * 根据兴趣点ID获取兴趣点
@@ -31,7 +34,7 @@ public interface InterestPointBaseService {
      *     <li><b>没有查询到兴趣点</b> - 返回 {@code false}，且会在 {@code null}</li>
      * </ul>
      */
-    R<InterestPointDTO> getInterestPointById(String id);
+    R<InterestPointDTO> getInterestPointById(@NotEmpty String id);
 
     /**
      *
@@ -42,7 +45,7 @@ public interface InterestPointBaseService {
      *     <li><b>修改兴趣点失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> modifyInterestPoint(InterestPointDTO modifiedInterestPoint);
+    R<Boolean> modifyInterestPoint(@NotNull InterestPointDTO modifiedInterestPoint);
 
     /**
      * 根据兴趣点ID删除兴趣点
@@ -53,6 +56,6 @@ public interface InterestPointBaseService {
      *     <li><b>删除兴趣点失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> removeInterestPointById(String id);
+    R<Boolean> removeInterestPointById(@NotEmpty String id);
 
 }

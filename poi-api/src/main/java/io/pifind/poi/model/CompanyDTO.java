@@ -24,13 +24,13 @@ public class CompanyDTO {
     private String logo;
 
     /**
-     * 公司简介
-     */
-    private String introduction;
-
-    /**
      * 公司类别
      */
     private Long categoryId;
+
+    /**
+     * 公司简介
+     */
+    private String introduction;
 
 }

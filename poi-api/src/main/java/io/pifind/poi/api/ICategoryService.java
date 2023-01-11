@@ -3,6 +3,8 @@ package io.pifind.poi.api;
 import io.pifind.common.response.R;
 import io.pifind.poi.model.CategoryDTO;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * 公司标签服务
  */
@@ -17,7 +19,7 @@ public interface ICategoryService {
      *     <li><b>添加类别失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> addCategory(CategoryDTO category);
+    R<Boolean> addCategory(@NotNull CategoryDTO category);
 
     /**
      * 根据类别ID获取类别实体对象
@@ -28,7 +30,7 @@ public interface ICategoryService {
      *     <li><b>不存在类别</b> - 返回 {@code null} </li>
      * </ul>
      */
-    R<CategoryDTO> getCategoryById(String id);
+    R<CategoryDTO> getCategoryById(@NotNull Long id);
 
 
     /**
@@ -40,7 +42,7 @@ public interface ICategoryService {
      *     <li><b>修改类别失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> modifyCategory(CategoryDTO modifiedCategory);
+    R<Boolean> modifyCategory(@NotNull CategoryDTO modifiedCategory);
 
     /**
      * 通过类别ID删除类别
@@ -56,6 +58,6 @@ public interface ICategoryService {
      *     <li><b>删除类别失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> removeCategoryById(String id);
+    R<Boolean> removeCategoryById(@NotNull Long id);
 
 }

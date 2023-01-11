@@ -53,6 +53,6 @@ public interface ICompanyService {
      *     <li><b>删除公司失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> removeCompanyById(@NotNull @NotEmpty String id);
+    R<Boolean> removeCompanyById(@NotEmpty String id);
 
 }
