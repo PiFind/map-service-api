@@ -1,10 +1,12 @@
 package io.pifind.poi.model;
 
 import io.pifind.map.model.CoordinateDTO;
+import lombok.Data;
 
 /**
  * 兴趣点
  */
+@Data
 public class InterestPointDTO {
 
     /**

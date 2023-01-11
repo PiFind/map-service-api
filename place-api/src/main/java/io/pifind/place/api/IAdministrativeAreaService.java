@@ -14,12 +14,10 @@ public interface IAdministrativeAreaService {
      * 判断是否存在行政区
      * @param id 行政区ID
      * @return 返回值类型为 {@link Boolean}
-     * <p>
-     *     <ul>
-     *         <li><b>存在行政区</b> - 返回 {@code true} </li>
-     *         <li><b>不存在行政区</b> - 返回 {@code false} </li>
-     *     </ul>
-     * </p>
+     * <ul>
+     *     <li><b>存在行政区</b> - 返回 {@code true} </li>
+     *     <li><b>不存在行政区</b> - 返回 {@code false} </li>
+     * </ul>
      */
     R<Boolean> existAdministrativeAreaById(@NotNull Long id);
 
@@ -33,35 +31,32 @@ public interface IAdministrativeAreaService {
      * @param id 行政区ID
      * @param layerLevel 行政区划下深度
      * @return 返回值类型为 {@link AdministrativeAreaDTO}
-     * <p>
-     *     <ul>
-     *         <li><b>存在行政区ID</b> - 返回 {@link AdministrativeAreaDTO 行政区实体对象} </li>
-     *         <li><b>不存在行政区ID</b> - 返回 {@code null}</li>
-     *     </ul>
-     * </p>
+     * <ul>
+     *     <li><b>存在行政区ID</b> - 返回 {@link AdministrativeAreaDTO 行政区实体对象} </li>
+     *     <li><b>不存在行政区ID</b> - 返回 {@code null}</li>
+     * </ul>
      */
     R<AdministrativeAreaDTO> getAdministrativeAreaById(@NotNull Long id,@NotNull Integer layerLevel);
 
     /**
      * 获取ID详细地址,例如：
      * <p>
-     *     在中文环境下,如果我们使用如下输入：
-     *     <ul>
-     *         <li>{@code id=145010103L;}</li>
-     *         <li>{@code separator = "-";}</li>
-     *     </ul>
-     *     获取的行政区名称为 <b>朝阳区</b> ，那么返回结果就是：
-     *     <b>中国-北京-北京市-朝阳区</b>
+     * 在中文环境下,如果我们使用如下输入：
      * </p>
+     * <ul>
+     *     <li>{@code id=145010103L;}</li>
+     *     <li>{@code separator = "-";}</li>
+     * </ul>
+     * 获取的行政区名称为 <b>朝阳区</b> ，那么返回结果就是：
+     * <b>中国-北京-北京市-朝阳区</b>
+     *
      * @param id 行政区ID
      * @param separator 分隔符
      * @return 返回值类型为 {@link String}
-     * <p>
-     *     <ul>
-     *         <li><b>存在ID</b> - 返回 {@link String 拼接好的字符串}</li>
-     *         <li><b>不存在ID</b> - 返回 {@code null}</li>
-     *     </ul>
-     * </p>
+     * <ul>
+     *     <li><b>存在ID</b> - 返回 {@link String 拼接好的字符串}</li>
+     *     <li><b>不存在ID</b> - 返回 {@code null}</li>
+     * </ul>
      */
     R<String> getDetailedAddress(@NotNull Long id,@NotNull String separator);
 

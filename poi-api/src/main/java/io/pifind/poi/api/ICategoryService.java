@@ -12,12 +12,10 @@ public interface ICategoryService {
      * 添加一个类别
      * @param category {@link CategoryDTO 类别实体对象}
      * @return 返回值类型为 {@link Boolean}
-     * <p>
-     *     <ul>
-     *         <li><b>添加类别成功</b> - 返回 {@code true}</li>
-     *         <li><b>添加类别失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
-     *     </ul>
-     * </p>
+     * <ul>
+     *     <li><b>添加类别成功</b> - 返回 {@code true}</li>
+     *     <li><b>添加类别失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
+     * </ul>
      */
     R<Boolean> addCategory(CategoryDTO category);
 
@@ -25,12 +23,10 @@ public interface ICategoryService {
      * 根据类别ID获取类别实体对象
      * @param id 类别ID
      * @return 返回值类型为 {@link CategoryDTO}
-     * <p>
-     *     <ul>
-     *         <li><b>存在类别</b> - 返回 {@link CategoryDTO 类别实体对象} </li>
-     *         <li><b>不存在类别</b> - 返回 {@code null} </li>
-     *     </ul>
-     * </p>
+     * <ul>
+     *     <li><b>存在类别</b> - 返回 {@link CategoryDTO 类别实体对象} </li>
+     *     <li><b>不存在类别</b> - 返回 {@code null} </li>
+     * </ul>
      */
     R<CategoryDTO> getCategoryById(String id);
 
@@ -39,12 +35,10 @@ public interface ICategoryService {
      * 修改类别信息
      * @param modifiedCategory 修改过后的{@link CategoryDTO 类别实体对象}
      * @return 返回值类型为 {@link Boolean}
-     * <p>
-     *     <ul>
-     *         <li><b>修改类别成功</b> - 返回 {@code true}</li>
-     *         <li><b>修改类别失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
-     *     </ul>
-     * </p>
+     * <ul>
+     *     <li><b>修改类别成功</b> - 返回 {@code true}</li>
+     *     <li><b>修改类别失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
+     * </ul>
      */
     R<Boolean> modifyCategory(CategoryDTO modifiedCategory);
 
@@ -57,12 +51,10 @@ public interface ICategoryService {
      * </p>
      * @param id 类被ID
      * @return 返回值类型为 {@link Boolean}
-     * <p>
-     *     <ul>
-     *         <li><b>删除类别成功</b> - 返回 {@code true}</li>
-     *         <li><b>删除类别失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
-     *     </ul>
-     * </p>
+     * <ul>
+     *     <li><b>删除类别成功</b> - 返回 {@code true}</li>
+     *     <li><b>删除类别失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
+     * </ul>
      */
     R<Boolean> removeCategoryById(String id);
 
