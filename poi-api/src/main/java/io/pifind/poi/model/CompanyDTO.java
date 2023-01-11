@@ -1,6 +1,5 @@
 package io.pifind.poi.model;
 
-import io.pifind.map.model.CoordinateDTO;
 import lombok.Data;
 
 /**
@@ -20,9 +19,9 @@ public class CompanyDTO {
     private String name;
 
     /**
-     * 公司详细地址
+     * logo URL地址
      */
-    private String address;
+    private String logo;
 
     /**
      * 公司简介
@@ -30,18 +29,8 @@ public class CompanyDTO {
     private String introduction;
 
     /**
-     * 所属类别
+     * 公司类别
      */
     private Long categoryId;
-
-    /**
-     * 行政区ID
-     */
-    private Long administrativeAreaId;
-
-    /**
-     * 定位的坐标
-     */
-    private CoordinateDTO coordinate;
 
 }
