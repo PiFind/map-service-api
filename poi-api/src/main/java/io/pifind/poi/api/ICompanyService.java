@@ -2,10 +2,13 @@ package io.pifind.poi.api;
 
 import io.pifind.common.response.Page;
 import io.pifind.common.response.R;
+import io.pifind.place.model.AdministrativeAreaDTO;
+import io.pifind.poi.model.CategoryDTO;
 import io.pifind.poi.model.CompanyDTO;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 /**
  * 公司服务
@@ -26,7 +29,7 @@ public interface ICompanyService {
     R<Boolean> addCompany(@NotNull CompanyDTO company);
 
     /**
-     * 通过公司ID获取公司实体类
+     * 通过公司ID获取公司实体对象
      * @param id 公司ID
      * @return 返回值类型为 {@link CompanyDTO}
      * <p>
@@ -66,17 +69,55 @@ public interface ICompanyService {
 
 
     /**
-     * 通过关键词搜索公司
-     * @param pageSize 页大小
+     * 通过地区和关键词搜索公司 (模糊搜索)
+     * @param pageSize 页大小（一页最多存放多少条数据）
      * @param currentPage 当前页
-     * @param areaId 搜索的区域的ID
-     * @param keyword 关键词
-     * @return
+     * @param areaId 搜索的区域的ID (参考 : {@link AdministrativeAreaDTO#getId()})
+     * @param keywords 关键词
+     * @return 返回值类型为 {@link Page<CompanyDTO>} ，如果没有搜索到结果 {@link Page#getTotal() } 将为 0
+     * @see AdministrativeAreaDTO
      */
-    R<Page<CompanyDTO>> searchCompaniesByKeyword(
+    R<Page<CompanyDTO>> searchCompaniesByAreaAndKeyword(
             @NotNull Integer pageSize,
             @NotNull Integer currentPage,
             @NotNull Long areaId,
-            @NotEmpty String keyword);
+            @NotNull List<String> keywords
+    );
+
+    /**
+     * 通过地区和类别搜索公司
+     * @param pageSize 页大小（一页最多存放多少条数据）
+     * @param currentPage 当前页
+     * @param areaId 搜索的区域的ID (参考 : {@link AdministrativeAreaDTO#getId()})
+     * @param categoryId 搜索的类别的ID (参考 : {@link CategoryDTO#getId()})
+     * @return 返回值类型为 {@link Page<CompanyDTO>} ，如果没有搜索到结果 {@link Page#getTotal() } 将为 0
+     * @see AdministrativeAreaDTO
+     * @see CategoryDTO
+     */
+    R<Page<CompanyDTO>> searchCompaniesByAreaAndCategory(
+            @NotNull Integer pageSize,
+            @NotNull Integer currentPage,
+            @NotNull Long areaId,
+            @NotNull Long categoryId
+    );
+
+    /**
+     * 通过地区、类别和关键字搜索公司（模糊搜索）
+     * @param pageSize 页大小（一页最多存放多少条数据）
+     * @param currentPage 当前页
+     * @param areaId 搜索的区域的ID (参考 : {@link AdministrativeAreaDTO#getId()})
+     * @param categoryId 搜索的类别的ID (参考 : {@link CategoryDTO#getId()})
+     * @param keywords 关键词
+     * @return {@link Page<CompanyDTO>} ，如果没有搜索到结果 {@link Page#getTotal() } 将为 0
+     * @see AdministrativeAreaDTO
+     * @see CategoryDTO
+     */
+    R<Page<CompanyDTO>> searchCompaniesByAreaAndCategory(
+            @NotNull Integer pageSize,
+            @NotNull Integer currentPage,
+            @NotNull Long areaId,
+            @NotNull Long categoryId,
+            @NotNull List<String> keywords
+    );
 
 }
