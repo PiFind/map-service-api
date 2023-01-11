@@ -47,7 +47,7 @@
 ```xml
 <!-- 地图服务标准API -->
 <dependency>
-  <groupId>io.pifind.placeio.pifind.place</groupId>
+  <groupId>io.pifind.map</groupId>
   <artifactId>map-api</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 </dependency>
