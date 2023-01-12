@@ -54,7 +54,7 @@ public enum PoiStatusEnum {
         if (map == null) {
             map = new HashMap<>();
             for (PoiStatusEnum status : values()) {
-                map.put(code,status);
+                map.put(status.code(), status);
             }
         }
         return map.get(code);

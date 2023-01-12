@@ -60,7 +60,7 @@ public enum CompanyStatusEnum {
         if (map == null) {
             map = new HashMap<>();
             for (CompanyStatusEnum status : values()) {
-                map.put(code,status);
+                map.put(status.code(), status);
             }
         }
         return map.get(code);
