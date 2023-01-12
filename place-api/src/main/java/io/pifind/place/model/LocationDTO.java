@@ -10,11 +10,6 @@ import lombok.Data;
 public class LocationDTO {
 
     /**
-     * 地点拼接好的全名
-     */
-    private String fullName ;
-
-    /**
      * 位置名
      */
     private String name;
