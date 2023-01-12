@@ -45,10 +45,18 @@
 **第三步** 在项目的 pom.xml 中加入如下依赖
 
 ```xml
-<!-- 地图服务标准API -->
+<!-- 地点服务标准API -->
 <dependency>
   <groupId>io.pifind.map</groupId>
-  <artifactId>map-api</artifactId>
+  <artifactId>place-api</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 </dependency>
+
+<!-- POI服务标准API -->
+<dependency>
+    <groupId>io.pifind.map</groupId>
+    <artifactId>poi-api</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+</dependency>
+
 ```

@@ -1,6 +1,7 @@
 package io.pifind.poi.model;
 
 import io.pifind.map.model.CoordinateDTO;
+import io.pifind.poi.constant.PoiStatusEnum;
 import lombok.Data;
 
 /**
@@ -38,6 +39,11 @@ public class InterestPointDTO {
      * 行政区ID
      */
     private Long administrativeAreaId;
+
+    /**
+     * 兴趣点状态
+     */
+    private PoiStatusEnum status;
 
     /**
      * 定位的坐标
