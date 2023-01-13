@@ -29,14 +29,14 @@ public interface IAdministrativeAreaService {
      *     或者达到当前树的最大高度
      * </p>
      * @param id 行政区ID
-     * @param layerLevel 行政区划下深度
+     * @param deep 行政区下分深度
      * @return 返回值类型为 {@link AdministrativeAreaDTO}
      * <ul>
      *     <li><b>存在行政区ID</b> - 返回 {@link AdministrativeAreaDTO 行政区实体对象} </li>
      *     <li><b>不存在行政区ID</b> - 返回 {@code null}</li>
      * </ul>
      */
-    R<AdministrativeAreaDTO> getAdministrativeAreaById(@NotNull Long id,@NotNull Integer layerLevel);
+    R<AdministrativeAreaDTO> getAdministrativeAreaById(@NotNull Long id,@NotNull Integer deep);
 
     /**
      * 获取ID详细地址,例如：
