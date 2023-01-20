@@ -1,12 +1,16 @@
 package io.pifind.map.model;
 
 import io.pifind.map.constant.GeographicCoordinateSystemEnum;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 定位坐标系
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CoordinateDTO {
 
     /**
@@ -23,5 +27,14 @@ public class CoordinateDTO {
      * 坐标系
      */
     private GeographicCoordinateSystemEnum system;
+
+    /**
+     * 默认使用 WGS84 坐标系
+     * @param longitude 经度
+     * @param latitude 纬度
+     */
+    public CoordinateDTO(Double longitude,Double latitude) {
+        this(longitude,latitude,GeographicCoordinateSystemEnum.WGS84);
+    }
 
 }
