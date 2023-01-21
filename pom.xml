@@ -9,7 +9,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>common</module>
         <module>place-api</module>
         <module>poi-api</module>
     </modules>
@@ -21,6 +20,7 @@
         <!-- lomlok -->
         <org.projectlombok.version>1.18.24</org.projectlombok.version>
         <io.pifind.common.version>0.0.2-snapshot</io.pifind.common.version>
+        <io.pifind.map.geocommon>0.0.1-snapshot</io.pifind.map.geocommon>
     </properties>
 
     <repositories>
@@ -48,6 +48,13 @@
             <groupId>io.pifind</groupId>
             <artifactId>common</artifactId>
             <version>${io.pifind.common.version}</version>
+        </dependency>
+
+        <!-- PiFind 地理公共库 -->
+        <dependency>
+            <groupId>io.pifind.map</groupId>
+            <artifactId>geo-common</artifactId>
+            <version>${io.pifind.map.geocommon}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
