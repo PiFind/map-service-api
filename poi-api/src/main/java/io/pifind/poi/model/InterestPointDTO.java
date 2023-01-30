@@ -26,9 +26,19 @@ public class InterestPointDTO {
     private String name;
 
     /**
+     * 兴趣点名称（英文名）
+     */
+    private String nameEn;
+
+    /**
      * 兴趣点详细地址
      */
     private String address;
+
+    /**
+     * 兴趣点详细地址（英文名）
+     */
+    private String addressEn;
 
     /**
      * 公司ID
