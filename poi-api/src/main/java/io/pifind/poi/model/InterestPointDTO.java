@@ -28,7 +28,7 @@ public class InterestPointDTO {
     /**
      * 兴趣点名称（英文名）
      */
-    private String nameEn;
+    private String nameEN;
 
     /**
      * 兴趣点详细地址
@@ -38,7 +38,7 @@ public class InterestPointDTO {
     /**
      * 兴趣点详细地址（英文名）
      */
-    private String addressEn;
+    private String addressEN;
 
     /**
      * 公司ID
