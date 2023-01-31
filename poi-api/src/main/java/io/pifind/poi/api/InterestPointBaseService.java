@@ -3,7 +3,6 @@ package io.pifind.poi.api;
 import io.pifind.common.response.R;
 import io.pifind.poi.model.InterestPointDTO;
 
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -34,7 +33,7 @@ public interface InterestPointBaseService {
      *     <li><b>没有查询到兴趣点</b> - 返回 {@code false}，且会在 {@code null}</li>
      * </ul>
      */
-    R<InterestPointDTO> getInterestPointById(@NotEmpty Long id);
+    R<InterestPointDTO> getInterestPointById(@NotNull Long id);
 
     /**
      *
@@ -56,6 +55,6 @@ public interface InterestPointBaseService {
      *     <li><b>删除兴趣点失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Void> removeInterestPointById(@NotEmpty Long id);
+    R<Void> removeInterestPointById(@NotNull Long id);
 
 }

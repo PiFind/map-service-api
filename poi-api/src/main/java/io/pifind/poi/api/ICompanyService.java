@@ -3,7 +3,6 @@ package io.pifind.poi.api;
 import io.pifind.common.response.R;
 import io.pifind.poi.model.CompanyDTO;
 
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -31,7 +30,7 @@ public interface ICompanyService {
      *     <li><b>不存在公司</b> - 返回 {@code null} </li>
      * </ul>
      */
-    R<CompanyDTO> getCompanyById(@NotNull @NotEmpty  String id);
+    R<CompanyDTO> getCompanyById(@NotNull Long id);
 
     /**
      * 修改公司信息
@@ -53,6 +52,6 @@ public interface ICompanyService {
      *     <li><b>删除公司失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Void> removeCompanyById(@NotEmpty String id);
+    R<Void> removeCompanyById(@NotNull Long id);
 
 }
