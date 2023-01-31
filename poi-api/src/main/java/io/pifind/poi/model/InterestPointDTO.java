@@ -128,7 +128,7 @@ public class InterestPointDTO {
     /**
      * 兴趣点状态
      */
-    private PoiStatusEnum status;
+    private PoiStatusEnum poiStatus;
 
     /**
      * 定位的坐标
