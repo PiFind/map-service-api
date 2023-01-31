@@ -14,13 +14,13 @@ public interface ICompanyService {
     /**
      * 增加一家公司
      * @param company {@link CompanyDTO 公司实体对象}
-     * @return 返回值类型为 {@link Boolean}
+     * @return 无返回值
      * <ul>
-     *     <li><b>添加公司成功</b> - 返回 {@code true}</li>
-     *     <li><b>添加公司失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
+     *     <li><b>添加公司成功</b> - 返回成功响应 {@code code == 0}</li>
+     *     <li><b>添加公司失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> addCompany(@NotNull CompanyDTO company);
+    R<Void> addCompany(@NotNull CompanyDTO company);
 
     /**
      * 通过公司ID获取公司实体对象
@@ -36,23 +36,23 @@ public interface ICompanyService {
     /**
      * 修改公司信息
      * @param modifiedCompany 修改过公司信息后的{@link CompanyDTO 公司实体对象}
-     * @return 返回值类型为 {@link Boolean}
+     * @return 无返回值
      * <ul>
-     *     <li><b>修改公司成功</b> - 返回 {@code true}</li>
-     *     <li><b>修改公司失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
+     *     <li><b>修改公司成功</b> - 返回成功响应 {@code code == 0}</li>
+     *     <li><b>修改公司失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> modifyCompany(@NotNull CompanyDTO modifiedCompany);
+    R<Void> modifyCompany(@NotNull CompanyDTO modifiedCompany);
 
     /**
      * 通过公司ID删除公司
      * @param id 公司ID
-     * @return 返回值类型为 {@link Boolean}
+     * @return 无返回值
      * <ul>
-     *     <li><b>删除公司成功</b> - 返回 {@code true}</li>
-     *     <li><b>删除公司失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
+     *     <li><b>删除公司成功</b> - 返回成功响应 {@code code == 0}</li>
+     *     <li><b>删除公司失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> removeCompanyById(@NotEmpty String id);
+    R<Void> removeCompanyById(@NotEmpty String id);
 
 }

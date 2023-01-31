@@ -13,13 +13,13 @@ public interface ICategoryService {
     /**
      * 添加一个类别
      * @param category {@link CategoryDTO 类别实体对象}
-     * @return 返回值类型为 {@link Boolean}
+     * @return 无返回值
      * <ul>
-     *     <li><b>添加类别成功</b> - 返回 {@code true}</li>
-     *     <li><b>添加类别失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
+     *     <li><b>添加类别成功</b> - 返回成功响应 {@code code == 0}</li>
+     *     <li><b>添加类别失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> addCategory(@NotNull CategoryDTO category);
+    R<Void> addCategory(@NotNull CategoryDTO category);
 
     /**
      * 根据类别ID获取类别实体对象
@@ -36,13 +36,13 @@ public interface ICategoryService {
     /**
      * 修改类别信息
      * @param modifiedCategory 修改过后的{@link CategoryDTO 类别实体对象}
-     * @return 返回值类型为 {@link Boolean}
+     * @return 无返回值
      * <ul>
-     *     <li><b>修改类别成功</b> - 返回 {@code true}</li>
-     *     <li><b>修改类别失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
+     *     <li><b>修改类别成功</b> - 返回成功响应 {@code code == 0}</li>
+     *     <li><b>修改类别失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> modifyCategory(@NotNull CategoryDTO modifiedCategory);
+    R<Void> modifyCategory(@NotNull CategoryDTO modifiedCategory);
 
     /**
      * 通过类别ID删除类别
@@ -52,12 +52,12 @@ public interface ICategoryService {
      *     </font>
      * </p>
      * @param id 类被ID
-     * @return 返回值类型为 {@link Boolean}
+     * @return 无返回值
      * <ul>
-     *     <li><b>删除类别成功</b> - 返回 {@code true}</li>
-     *     <li><b>删除类别失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
+     *     <li><b>删除类别成功</b> - 返回成功响应 {@code code == 0}</li>
+     *     <li><b>删除类别失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> removeCategoryById(@NotNull Long id);
+    R<Void> removeCategoryById(@NotNull Long id);
 
 }

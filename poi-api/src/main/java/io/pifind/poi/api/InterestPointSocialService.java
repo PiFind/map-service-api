@@ -17,35 +17,35 @@ public interface InterestPointSocialService {
     /**
      * 兴趣点的浏览量增加 1
      * @param id 兴趣点ID
-     * @return 返回值类型为 {@link Boolean}
+     * @return 无返回值
      * <ul>
-     *     <li><b>浏览量增加成功</b> - 返回 {@code true}</li>
-     *     <li><b>浏览量增加失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
+     *     <li><b>浏览量增加成功</b> - 返回成功响应 {@code code == 0}</li>
+     *     <li><b>浏览量增加失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> browse(@NotNull Long id);
+    R<Void> browse(@NotNull Long id);
 
     /**
      * 兴趣点的收藏量增加 1
      * @param id 兴趣点ID
-     * @return 返回值类型为 {@link Boolean}
+     * @return 无返回值
      * <ul>
-     *     <li><b>收藏量增加成功</b> - 返回 {@code true}</li>
-     *     <li><b>收藏量增加失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
+     *     <li><b>收藏量增加成功</b> - 返回成功响应 {@code code == 0}</li>
+     *     <li><b>收藏量增加失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> collect(@NotNull Long id);
+    R<Void> collect(@NotNull Long id);
 
     /**
      * 对兴趣点进行评价
      * @param id 兴趣点ID
      * @param score 用户的评分
-     * @return 返回值类型为 {@link Boolean}
+     * @return 无返回值
      * <ul>
-     *     <li><b>收藏量增加成功</b> - 返回 {@code true}</li>
-     *     <li><b>收藏量增加失败</b> - 返回 {@code false}，且会在 {@link R#getMessage()} 中说明原因</li>
+     *     <li><b>收藏量增加成功</b> - 返回成功响应 {@code code == 0}</li>
+     *     <li><b>收藏量增加失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Boolean> evaluate(@NotNull Long id,@NotNull Double score);
+    R<Void> evaluate(@NotNull Long id,@NotNull Double score);
 
 }
