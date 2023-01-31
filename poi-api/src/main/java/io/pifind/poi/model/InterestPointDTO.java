@@ -144,4 +144,5 @@ public class InterestPointDTO {
      * 更新时间
      */
     private Date updateTime;
+
 }

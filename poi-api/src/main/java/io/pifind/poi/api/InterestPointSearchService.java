@@ -6,6 +6,7 @@ import io.pifind.map.model.CoordinateDTO;
 import io.pifind.place.model.AdministrativeAreaDTO;
 import io.pifind.poi.model.CategoryDTO;
 import io.pifind.poi.model.InterestPointDTO;
+import io.pifind.poi.model.SortingModeDTO;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -25,6 +26,7 @@ public interface InterestPointSearchService {
      * @param currentPage 当前页
      * @param areaId 搜索的区域的ID (参考 : {@link AdministrativeAreaDTO})
      * @param keywords 关键词
+     * @param sortingMode 排序模式
      * @return 返回值类型为 {@link Page } ，如果没有搜索到结果 {@link Page#getTotal() } 将为 0
      * @see AdministrativeAreaDTO
      */
@@ -32,7 +34,8 @@ public interface InterestPointSearchService {
             @NotNull Integer pageSize,
             @NotNull Integer currentPage,
             @NotNull Long areaId,
-            @NotNull List<String> keywords
+            @NotNull List<String> keywords,
+            @NotNull SortingModeDTO sortingMode
     );
 
     /**
@@ -41,6 +44,7 @@ public interface InterestPointSearchService {
      * @param currentPage 当前页
      * @param areaId 搜索的区域的ID (参考 : {@link AdministrativeAreaDTO} )
      * @param categoryId 搜索的类别的ID (参考 : {@link CategoryDTO} )
+     * @param sortingMode 排序模式
      * @return 返回值类型为 {@link Page } ，如果没有搜索到结果 {@link Page#getTotal() } 将为 0
      * @see AdministrativeAreaDTO
      * @see CategoryDTO
@@ -49,7 +53,8 @@ public interface InterestPointSearchService {
             @NotNull Integer pageSize,
             @NotNull Integer currentPage,
             @NotNull Long areaId,
-            @NotNull Long categoryId
+            @NotNull Long categoryId,
+            @NotNull SortingModeDTO sortingMode
     );
 
     /**
@@ -59,6 +64,7 @@ public interface InterestPointSearchService {
      * @param areaId 搜索的区域的ID (参考 : {@link AdministrativeAreaDTO})
      * @param categoryId 搜索的类别的ID (参考 : {@link CategoryDTO})
      * @param keywords 关键词
+     * @param sortingMode 排序模式
      * @return {@link Page } ，如果没有搜索到结果 {@link Page#getTotal() } 将为 0
      * @see AdministrativeAreaDTO
      * @see CategoryDTO
@@ -68,7 +74,8 @@ public interface InterestPointSearchService {
             @NotNull Integer currentPage,
             @NotNull Long areaId,
             @NotNull Long categoryId,
-            @NotNull List<String> keywords
+            @NotNull List<String> keywords,
+            @NotNull SortingModeDTO sortingMode
     );
 
     /**
@@ -78,6 +85,7 @@ public interface InterestPointSearchService {
      * @param coordinate 当前坐标
      * @param range 以当前坐标为圆心，半径为 range 的范围搜索目标，单位：米
      * @param categoryId 搜索的类别的ID (参考 : {@link CategoryDTO})
+     * @param sortingMode 排序模式
      * @return {@link Page } ，如果没有搜索到结果 {@link Page#getTotal() } 将为 0
      * @see CategoryDTO
      */
@@ -86,7 +94,8 @@ public interface InterestPointSearchService {
             @NotNull Integer currentPage,
             @NotNull CoordinateDTO coordinate,
             @NotNull Integer range,
-            @NotNull Long categoryId
+            @NotNull Long categoryId,
+            @NotNull SortingModeDTO sortingMode
     );
 
 }
