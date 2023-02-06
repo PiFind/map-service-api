@@ -30,7 +30,7 @@ public interface InterestPointBaseService {
      * @return 返回值类型为 {@link InterestPointDTO}
      * <ul>
      *     <li><b>查询到兴趣点</b> - 返回 {@link InterestPointDTO 兴趣点实体对象}</li>
-     *     <li><b>没有查询到兴趣点</b> - 返回 {@code false}，且会在 {@code null}</li>
+     *     <li><b>没有查询到兴趣点</b> - 返回 {@code null}</li>
      * </ul>
      */
     R<InterestPointDTO> getInterestPointById(@NotNull Long id);

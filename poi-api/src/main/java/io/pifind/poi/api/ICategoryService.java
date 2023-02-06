@@ -2,6 +2,8 @@ package io.pifind.poi.api;
 
 import io.pifind.common.response.R;
 import io.pifind.poi.model.CategoryDTO;
+import io.pifind.poi.model.LocalizedNameDTO;
+import io.pifind.poi.model.LocalizedNameGroupDTO;
 
 import javax.validation.constraints.NotNull;
 
@@ -51,7 +53,7 @@ public interface ICategoryService {
      *     <b>注意：</b> 如果删除的类别下有子类别，那么也会删除其子类别
      *     </font>
      * </p>
-     * @param id 类被ID
+     * @param id 类别ID
      * @return 无返回值
      * <ul>
      *     <li><b>删除类别成功</b> - 返回成功响应 {@code code == 0}</li>
@@ -59,5 +61,61 @@ public interface ICategoryService {
      * </ul>
      */
     R<Void> removeCategoryById(@NotNull Long id);
+
+    /**
+     * 添加本地化命名
+     * @param name {@link LocalizedNameDTO 本地化命名实体对象 }
+     * @return 无返回值
+     * <ul>
+     *     <li><b>添加本地化命名成功</b> - 返回成功响应 {@code code == 0}</li>
+     *     <li><b>添加本地化命名失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
+     * </ul>
+     */
+    R<Void> addLocalizedName(LocalizedNameDTO name);
+
+    /**
+     * 添加本地化命名组
+     * @param nameGroup {@link LocalizedNameGroupDTO 本地化命名组实体对象 }
+     * @return 无返回值
+     * <ul>
+     *     <li><b>添加本地化命名组成功</b> - 返回成功响应 {@code code == 0}</li>
+     *     <li><b>添加本地化命名组失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
+     * </ul>
+     */
+    R<Void> addLocalizedNameGroup(LocalizedNameGroupDTO nameGroup);
+
+    /**
+     * 修改本地化命名
+     * @param name {@link LocalizedNameDTO 本地化命名实体对象 }
+     * @return 无返回值
+     * <ul>
+     *     <li><b>修改本地化命名成功</b> - 返回成功响应 {@code code == 0}</li>
+     *     <li><b>修改本地化命名失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
+     * </ul>
+     */
+    R<Void> modifyLocalizedName(LocalizedNameDTO name);
+
+    /**
+     * 移除本地化命名
+     * @param id 类别ID
+     * @param language 语言代码
+     * @return 无返回值
+     * <ul>
+     *     <li><b>移除本地化命名成功</b> - 返回成功响应 {@code code == 0}</li>
+     *     <li><b>移除本地化命名失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
+     * </ul>
+     */
+    R<Void> removeLocalizedName(Long id,String language);
+
+    /**
+     * 移除所有本地化命名
+     * @param id 类别ID
+     * @return 无返回值
+     * <ul>
+     *     <li><b>移除所有本地化命名成功</b> - 返回成功响应 {@code code == 0}</li>
+     *     <li><b>移除所有本地化命名失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
+     * </ul>
+     */
+    R<Void> removeAllLocalizedNames(Long id);
 
 }

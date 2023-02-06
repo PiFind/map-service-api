@@ -21,6 +21,11 @@ public class CategoryDTO {
     private String name;
 
     /**
+     * 类别名的英文名
+     */
+    private String nameEN;
+
+    /**
      * 上级分类的ID
      */
     private Long superior;
