@@ -15,6 +15,11 @@ public class LocationDTO {
     private String name;
 
     /**
+     * 国家代号
+     */
+    private String country;
+
+    /**
      * 丢失坐标标志
      * <p>
      *     判断是否能通过 {@link #getCoordinate()} 获取到经纬度坐标
