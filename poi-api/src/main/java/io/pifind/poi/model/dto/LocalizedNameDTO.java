@@ -1,4 +1,4 @@
-package io.pifind.poi.model;
+package io.pifind.poi.model.dto;
 
 /**
  * 本地化命名

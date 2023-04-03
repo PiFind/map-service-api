@@ -1,4 +1,4 @@
-package io.pifind.poi.model;
+package io.pifind.poi.model.dto;
 
 import lombok.Data;
 

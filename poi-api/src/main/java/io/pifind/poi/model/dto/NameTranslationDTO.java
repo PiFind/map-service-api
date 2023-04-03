@@ -1,4 +1,4 @@
-package io.pifind.poi.model;
+package io.pifind.poi.model.dto;
 
 import java.util.List;
 

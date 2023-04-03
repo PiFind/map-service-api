@@ -1,4 +1,4 @@
-package io.pifind.poi.model;
+package io.pifind.poi.model.vo;
 
 import io.pifind.map.model.CoordinateDTO;
 import io.pifind.poi.constant.BusinessStatusEnum;
@@ -13,7 +13,7 @@ import java.util.List;
  * 兴趣点
  */
 @Data
-public class InterestPointDTO {
+public class InterestPointVO {
 
     /**
      * 主键
@@ -39,11 +39,6 @@ public class InterestPointDTO {
      * 兴趣点详细地址（英文名）
      */
     private String addressEN;
-
-    /**
-     * 公司ID
-     */
-    private String companyId;
 
     /**
      * 所属类别ID

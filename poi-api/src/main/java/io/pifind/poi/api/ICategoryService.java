@@ -1,9 +1,9 @@
 package io.pifind.poi.api;
 
 import io.pifind.common.response.R;
-import io.pifind.poi.model.CategoryDTO;
-import io.pifind.poi.model.LocalizedNameDTO;
-import io.pifind.poi.model.LocalizedNameGroupDTO;
+import io.pifind.poi.model.dto.CategoryDTO;
+import io.pifind.poi.model.dto.LocalizedNameDTO;
+import io.pifind.poi.model.dto.LocalizedNameGroupDTO;
 
 import javax.validation.constraints.NotNull;
 

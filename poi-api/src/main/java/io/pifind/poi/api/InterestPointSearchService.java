@@ -2,14 +2,13 @@ package io.pifind.poi.api;
 
 import io.pifind.common.response.Page;
 import io.pifind.common.response.R;
-import io.pifind.map.model.CoordinateDTO;
 import io.pifind.place.model.AdministrativeAreaDTO;
-import io.pifind.poi.model.CategoryDTO;
-import io.pifind.poi.model.InterestPointDTO;
-import io.pifind.poi.model.SortingModeDTO;
+import io.pifind.poi.constant.SortOrderEnum;
+import io.pifind.poi.constant.SortReferenceEnum;
+import io.pifind.poi.model.dto.CategoryDTO;
+import io.pifind.poi.model.vo.InterestPointVO;
 
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 /**
  * 兴趣点搜索服务
@@ -25,17 +24,19 @@ public interface InterestPointSearchService {
      * @param pageSize 页大小（一页最多存放多少条数据）
      * @param currentPage 当前页
      * @param areaId 搜索的区域的ID (参考 : {@link AdministrativeAreaDTO})
-     * @param keywords 关键词
-     * @param sortingMode 排序模式
+     * @param keyword 关键词
+     * @param sortOrder 排序模式
+     * @param reference 排序参考字段
      * @return 返回值类型为 {@link Page } ，如果没有搜索到结果 {@link Page#getTotal() } 将为 0
      * @see AdministrativeAreaDTO
      */
-    R<Page<InterestPointDTO>> searchPointsByAreaAndKeywords(
+    R<Page<InterestPointVO>> searchPointsByAreaAndKeywords(
             @NotNull Integer pageSize,
             @NotNull Integer currentPage,
             @NotNull Long areaId,
-            @NotNull List<String> keywords,
-            @NotNull SortingModeDTO sortingMode
+            @NotNull String keyword,
+            @NotNull SortOrderEnum sortOrder,
+            @NotNull SortReferenceEnum reference
     );
 
     /**
@@ -44,17 +45,19 @@ public interface InterestPointSearchService {
      * @param currentPage 当前页
      * @param areaId 搜索的区域的ID (参考 : {@link AdministrativeAreaDTO} )
      * @param categoryId 搜索的类别的ID (参考 : {@link CategoryDTO} )
-     * @param sortingMode 排序模式
+     * @param sortOrder 排序模式
+     * @param reference 排序参考字段
      * @return 返回值类型为 {@link Page } ，如果没有搜索到结果 {@link Page#getTotal() } 将为 0
      * @see AdministrativeAreaDTO
      * @see CategoryDTO
      */
-    R<Page<InterestPointDTO>> searchPointsByAreaAndCategory(
+    R<Page<InterestPointVO>> searchPointsByAreaAndCategory(
             @NotNull Integer pageSize,
             @NotNull Integer currentPage,
             @NotNull Long areaId,
             @NotNull Long categoryId,
-            @NotNull SortingModeDTO sortingMode
+            @NotNull SortOrderEnum sortOrder,
+            @NotNull SortReferenceEnum reference
     );
 
     /**
@@ -63,39 +66,21 @@ public interface InterestPointSearchService {
      * @param currentPage 当前页
      * @param areaId 搜索的区域的ID (参考 : {@link AdministrativeAreaDTO})
      * @param categoryId 搜索的类别的ID (参考 : {@link CategoryDTO})
-     * @param keywords 关键词
-     * @param sortingMode 排序模式
+     * @param keyword 关键词
+     * @param sortOrder 排序模式
+     * @param reference 排序参考字段
      * @return {@link Page } ，如果没有搜索到结果 {@link Page#getTotal() } 将为 0
      * @see AdministrativeAreaDTO
      * @see CategoryDTO
      */
-    R<Page<InterestPointDTO>> searchPointsByAreaAndCategoryAndKeywords(
+    R<Page<InterestPointVO>> searchPointsByAreaAndCategoryAndKeywords(
             @NotNull Integer pageSize,
             @NotNull Integer currentPage,
             @NotNull Long areaId,
             @NotNull Long categoryId,
-            @NotNull List<String> keywords,
-            @NotNull SortingModeDTO sortingMode
-    );
-
-    /**
-     * 通过坐标、类别搜索<b>附近的兴趣点</b>
-     * @param pageSize 页大小（一页最多存放多少条数据）
-     * @param currentPage 当前页
-     * @param coordinate 当前坐标
-     * @param range 以当前坐标为圆心，半径为 range 的范围搜索目标，单位：米
-     * @param categoryId 搜索的类别的ID (参考 : {@link CategoryDTO})
-     * @param sortingMode 排序模式
-     * @return {@link Page } ，如果没有搜索到结果 {@link Page#getTotal() } 将为 0
-     * @see CategoryDTO
-     */
-    R<Page<InterestPointDTO>> searchNearbyPoints(
-            @NotNull Integer pageSize,
-            @NotNull Integer currentPage,
-            @NotNull CoordinateDTO coordinate,
-            @NotNull Integer range,
-            @NotNull Long categoryId,
-            @NotNull SortingModeDTO sortingMode
+            @NotNull String keyword,
+            @NotNull SortOrderEnum sortOrder,
+            @NotNull SortReferenceEnum reference
     );
 
 }

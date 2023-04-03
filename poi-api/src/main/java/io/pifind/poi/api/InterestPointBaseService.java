@@ -1,7 +1,8 @@
 package io.pifind.poi.api;
 
 import io.pifind.common.response.R;
-import io.pifind.poi.model.InterestPointDTO;
+import io.pifind.poi.model.dto.InterestPointDTO;
+import io.pifind.poi.model.vo.InterestPointVO;
 
 import javax.validation.constraints.NotNull;
 
@@ -33,7 +34,7 @@ public interface InterestPointBaseService {
      *     <li><b>没有查询到兴趣点</b> - 返回 {@code null}</li>
      * </ul>
      */
-    R<InterestPointDTO> getInterestPointById(@NotNull Long id);
+    R<InterestPointVO> getInterestPointById(@NotNull Long id);
 
     /**
      *
