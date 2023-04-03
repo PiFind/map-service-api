@@ -6,11 +6,6 @@ package io.pifind.poi.constant;
 public enum SortReferenceEnum {
 
     /**
-     * 距离
-     */
-    DISTANCE,
-
-    /**
      * 评分
      */
     SCORE,
