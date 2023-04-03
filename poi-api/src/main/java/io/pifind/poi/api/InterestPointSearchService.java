@@ -33,7 +33,7 @@ public interface InterestPointSearchService {
      * @see AdministrativeAreaDTO
      * @see CategoryDTO
      */
-    R<Page<InterestPointVO>> searchPointsByAreaAndCategoryAndKeywords(
+    R<Page<InterestPointVO>> searchPoints(
             @NotNull  Integer pageSize,
             @NotNull  Integer currentPage,
             @NotNull  Long areaId,
