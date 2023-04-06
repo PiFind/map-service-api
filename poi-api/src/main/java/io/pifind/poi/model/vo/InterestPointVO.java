@@ -1,5 +1,7 @@
 package io.pifind.poi.model.vo;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import io.pifind.map.model.CoordinateDTO;
 import io.pifind.poi.constant.BusinessStatusEnum;
 import io.pifind.poi.constant.PoiStatusEnum;
@@ -18,7 +20,8 @@ public class InterestPointVO {
     /**
      * 主键
      */
-    private String id;
+    @JsonSerialize(using = ToStringSerializer.class)
+    private Long id;
 
     /**
      * 兴趣点名称
@@ -43,11 +46,13 @@ public class InterestPointVO {
     /**
      * 所属类别ID
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long categoryId;
 
     /**
      * 行政区ID
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long administrativeAreaId;
 
     /**

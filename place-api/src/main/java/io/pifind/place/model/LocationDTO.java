@@ -1,5 +1,7 @@
 package io.pifind.place.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import io.pifind.map.model.CoordinateDTO;
 import lombok.Data;
 
@@ -39,6 +41,7 @@ public class LocationDTO {
     /**
      * 定位到的行政区ID
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long administrativeAreaId;
 
 }

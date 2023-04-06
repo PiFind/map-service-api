@@ -1,12 +1,12 @@
 package io.pifind.poi.model.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import io.pifind.map.model.CoordinateDTO;
 import io.pifind.poi.constant.BusinessStatusEnum;
-import io.pifind.poi.constant.PoiStatusEnum;
 import io.pifind.poi.model.component.BusinessTimeDTO;
 import lombok.Data;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -25,7 +25,7 @@ public class InterestPointDTO {
      */
     private String name;
 
-    /**
+    /**s
      * 兴趣点名称（英文名）
      */
     private String nameEN;
@@ -43,11 +43,13 @@ public class InterestPointDTO {
     /**
      * 所属类别ID
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long categoryId;
 
     /**
      * 行政区ID
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long administrativeAreaId;
 
     /**
