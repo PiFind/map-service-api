@@ -18,7 +18,8 @@ public class InterestPointDTO {
     /**
      * 主键
      */
-    private String id;
+    @JsonSerialize(using = ToStringSerializer.class)
+    private Long id;
 
     /**
      * 兴趣点名称
