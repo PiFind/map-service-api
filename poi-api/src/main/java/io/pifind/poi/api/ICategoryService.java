@@ -1,9 +1,10 @@
 package io.pifind.poi.api;
 
 import io.pifind.common.response.R;
-import io.pifind.poi.model.dto.CategoryDTO;
+import io.pifind.poi.model.dto.CategoryEditDTO;
 import io.pifind.poi.model.dto.LocalizedNameDTO;
 import io.pifind.poi.model.dto.LocalizedNameGroupDTO;
+import io.pifind.poi.model.vo.CategoryVO;
 
 import javax.validation.constraints.NotNull;
 
@@ -14,37 +15,37 @@ public interface ICategoryService {
 
     /**
      * 添加一个类别
-     * @param category {@link CategoryDTO 类别实体对象}
+     * @param category {@link CategoryEditDTO 类别实体对象}
      * @return 无返回值
      * <ul>
      *     <li><b>添加类别成功</b> - 返回成功响应 {@code code == 0}</li>
      *     <li><b>添加类别失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Void> addCategory(@NotNull CategoryDTO category);
+    R<Void> addCategory(@NotNull CategoryEditDTO category);
 
     /**
      * 根据类别ID获取类别实体对象
      * @param id 类别ID
-     * @return 返回值类型为 {@link CategoryDTO}
+     * @return 返回值类型为 {@link CategoryVO}
      * <ul>
-     *     <li><b>存在类别</b> - 返回 {@link CategoryDTO 类别实体对象} </li>
+     *     <li><b>存在类别</b> - 返回 {@link CategoryVO 类别实体对象} </li>
      *     <li><b>不存在类别</b> - 返回 {@code null} </li>
      * </ul>
      */
-    R<CategoryDTO> getCategoryById(@NotNull Long id);
+    R<CategoryVO> getCategoryById(@NotNull Long id);
 
 
     /**
      * 修改类别信息
-     * @param modifiedCategory 修改过后的{@link CategoryDTO 类别实体对象}
+     * @param modifiedCategory 修改过后的{@link CategoryEditDTO 类别实体对象}
      * @return 无返回值
      * <ul>
      *     <li><b>修改类别成功</b> - 返回成功响应 {@code code == 0}</li>
      *     <li><b>修改类别失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Void> modifyCategory(@NotNull CategoryDTO modifiedCategory);
+    R<Void> modifyCategory(@NotNull CategoryEditDTO modifiedCategory);
 
     /**
      * 通过类别ID删除类别

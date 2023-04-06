@@ -8,7 +8,7 @@ import java.util.List;
  * 类别
  */
 @Data
-public class CategoryDTO {
+public class CategoryEditDTO {
 
     /**
      * 主键
@@ -33,6 +33,6 @@ public class CategoryDTO {
     /**
      * 该类目下的所有子类
      */
-    private List<CategoryDTO> categories;
+    private List<CategoryEditDTO> categories;
 
 }
