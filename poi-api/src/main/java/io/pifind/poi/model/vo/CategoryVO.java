@@ -1,5 +1,7 @@
 package io.pifind.poi.model.vo;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 import java.util.Date;
@@ -14,6 +16,7 @@ public class CategoryVO {
     /**
      * 主键
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long id;
 
     /**
@@ -29,6 +32,7 @@ public class CategoryVO {
     /**
      * 上级分类的ID
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long superior;
 
     /**
