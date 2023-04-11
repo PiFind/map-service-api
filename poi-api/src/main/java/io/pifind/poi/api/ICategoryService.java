@@ -7,6 +7,7 @@ import io.pifind.poi.model.dto.LocalizedNameGroupDTO;
 import io.pifind.poi.model.vo.CategoryVO;
 
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 /**
  * 公司标签服务
@@ -35,6 +36,16 @@ public interface ICategoryService {
      */
     R<CategoryVO> getCategoryById(@NotNull Long id);
 
+    /**
+     * 根据分类等级获取类别实体对象
+     * @param level 分类等级
+     * @return 返回值类型为 {@link List<CategoryVO>}
+     * <ul>
+     *     <li><b>存在分类等级</b> - 返回 {@link List<CategoryVO> 类别实体对象列表} </li>
+     *     <li><b>不存在类别</b> - 返回 {@code null} </li>
+     * </ul>
+     */
+    R<List<CategoryVO>> getCategoryListByLevel(@NotNull Integer level);
 
     /**
      * 修改类别信息
