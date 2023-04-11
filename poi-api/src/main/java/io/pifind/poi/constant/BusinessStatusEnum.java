@@ -6,9 +6,9 @@ package io.pifind.poi.constant;
 public enum BusinessStatusEnum {
 
     /**
-     * 正常
+     * 营业
      */
-    NORMAL,
+    OPEN,
 
     /**
      * 休店
