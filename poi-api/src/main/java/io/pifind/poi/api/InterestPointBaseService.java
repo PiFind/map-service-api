@@ -16,6 +16,7 @@ public interface InterestPointBaseService {
 
     /**
      * 添加一个兴趣点
+     * @param username 用户名
      * @param interestPoint {@link InterestPointDTO 兴趣点实体对象}
      * @return 无返回值
      * <ul>
@@ -23,10 +24,11 @@ public interface InterestPointBaseService {
      *     <li><b>添加兴趣点失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Void> addInterestPoint(@NotNull InterestPointDTO interestPoint);
+    R<Void> addInterestPoint(String username,@NotNull InterestPointDTO interestPoint);
 
     /**
      * 根据兴趣点ID获取兴趣点
+     * @param username 用户名
      * @param id 兴趣点ID
      * @return 返回值类型为 {@link InterestPointDTO}
      * <ul>
@@ -34,10 +36,11 @@ public interface InterestPointBaseService {
      *     <li><b>没有查询到兴趣点</b> - 返回 {@code null}</li>
      * </ul>
      */
-    R<InterestPointVO> getInterestPointById(@NotNull Long id);
+    R<InterestPointVO> getInterestPointById(String username,@NotNull Long id);
 
     /**
-     *
+     * 修改兴趣点信息
+     * @param username 用户名
      * @param modifiedInterestPoint 修改过兴趣点信息后的{@link InterestPointDTO 兴趣点实体对象}
      * @return 无返回值
      * <ul>
@@ -45,10 +48,11 @@ public interface InterestPointBaseService {
      *     <li><b>修改兴趣点失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Void> modifyInterestPoint(@NotNull InterestPointDTO modifiedInterestPoint);
+    R<Void> modifyInterestPoint(String username,@NotNull InterestPointDTO modifiedInterestPoint);
 
     /**
      * 根据兴趣点ID删除兴趣点
+     * @param username 用户名
      * @param id 兴趣点ID
      * @return 无返回值
      * <ul>
@@ -56,6 +60,6 @@ public interface InterestPointBaseService {
      *     <li><b>删除兴趣点失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Void> removeInterestPointById(@NotNull Long id);
+    R<Void> removeInterestPointById(String username,@NotNull Long id);
 
 }

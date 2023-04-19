@@ -16,6 +16,7 @@ public interface InterestPointSocialService {
 
     /**
      * 兴趣点的浏览量增加 1
+     * @param username 用户名
      * @param id 兴趣点ID
      * @return 无返回值
      * <ul>
@@ -23,10 +24,11 @@ public interface InterestPointSocialService {
      *     <li><b>浏览量增加失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Void> browse(@NotNull Long id);
+    R<Void> browse(String username,@NotNull Long id);
 
     /**
      * 兴趣点的收藏量增加 1
+     * @param username 用户名
      * @param id 兴趣点ID
      * @return 无返回值
      * <ul>
@@ -34,10 +36,11 @@ public interface InterestPointSocialService {
      *     <li><b>收藏量增加失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Void> collect(@NotNull Long id);
+    R<Void> collect(String username,@NotNull Long id);
 
     /**
      * 对兴趣点进行评价
+     * @param username 用户名
      * @param id 兴趣点ID
      * @param score 用户的评分
      * @return 无返回值
@@ -46,6 +49,6 @@ public interface InterestPointSocialService {
      *     <li><b>收藏量增加失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Void> evaluate(@NotNull Long id,@NotNull Double score);
+    R<Void> evaluate(String username,@NotNull Long id,@NotNull Double score);
 
 }
