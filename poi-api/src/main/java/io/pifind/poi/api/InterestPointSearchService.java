@@ -21,6 +21,13 @@ import javax.validation.constraints.NotNull;
 public interface InterestPointSearchService {
 
     /**
+     * 通过兴趣点ID查看兴趣点
+     * @param id 兴趣点ID
+     * @return 返回值为 {@link InterestPointVO}
+     */
+    R<InterestPointVO> viewPointById(@NotNull Long id);
+
+    /**
      * 通过地区、类别和关键字搜索兴趣点（模糊搜索）
      * @param pageSize 页大小（一页最多存放多少条数据）
      * @param currentPage 当前页

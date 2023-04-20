@@ -1,9 +1,11 @@
 package io.pifind.poi.api;
 
+import io.pifind.common.response.Page;
 import io.pifind.common.response.R;
 import io.pifind.poi.model.dto.InterestPointDTO;
 import io.pifind.poi.model.vo.InterestPointVO;
 
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -24,7 +26,7 @@ public interface InterestPointBaseService {
      *     <li><b>添加兴趣点失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Void> addInterestPoint(String username,@NotNull InterestPointDTO interestPoint);
+    R<Void> addInterestPoint(@NotEmpty String username,@NotNull InterestPointDTO interestPoint);
 
     /**
      * 根据兴趣点ID获取兴趣点
@@ -36,7 +38,14 @@ public interface InterestPointBaseService {
      *     <li><b>没有查询到兴趣点</b> - 返回 {@code null}</li>
      * </ul>
      */
-    R<InterestPointVO> getInterestPointById(String username,@NotNull Long id);
+    R<InterestPointVO> getInterestPointById(@NotEmpty String username,@NotNull Long id);
+
+    /**
+     * 根据发布者获取兴趣点分页
+     * @param username 用户名
+     * @return 返回值类型为 {@link Page<InterestPointDTO>}
+     */
+    R<Page<InterestPointVO>> getInterestPointPageByPublisher(@NotEmpty String username);
 
     /**
      * 修改兴趣点信息
@@ -48,7 +57,7 @@ public interface InterestPointBaseService {
      *     <li><b>修改兴趣点失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Void> modifyInterestPoint(String username,@NotNull InterestPointDTO modifiedInterestPoint);
+    R<Void> modifyInterestPoint(@NotEmpty String username,@NotNull InterestPointDTO modifiedInterestPoint);
 
     /**
      * 根据兴趣点ID删除兴趣点
@@ -60,6 +69,6 @@ public interface InterestPointBaseService {
      *     <li><b>删除兴趣点失败</b> - 返回失败响应 {@code code != 0}，且会在 {@link R#getMessage()} 中说明原因</li>
      * </ul>
      */
-    R<Void> removeInterestPointById(String username,@NotNull Long id);
+    R<Void> removeInterestPointById(@NotEmpty String username,@NotNull Long id);
 
 }
