@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
  *     该服务包含了除搜索服务外的增删改查（简单查询）等方法
  * </p>
  */
-public interface InterestPointBaseService {
+public interface InterestPointPublisherService {
 
     /**
      * 添加一个兴趣点
@@ -30,6 +30,7 @@ public interface InterestPointBaseService {
 
     /**
      * 根据兴趣点ID获取兴趣点
+     * 这个是给发布者自己查询使用的，所以兴趣点无论是否审核通过都会进行展示
      * @param username 用户名
      * @param id 兴趣点ID
      * @return 返回值类型为 {@link InterestPointDTO}
@@ -43,9 +44,15 @@ public interface InterestPointBaseService {
     /**
      * 根据发布者获取兴趣点分页
      * @param username 用户名
+     * @param currentPage 当前页
+     * @param pageSize 每页大小
      * @return 返回值类型为 {@link Page<InterestPointDTO>}
      */
-    R<Page<InterestPointVO>> getInterestPointPageByPublisher(@NotEmpty String username);
+    R<Page<InterestPointVO>> getInterestPointPageByPublisher(
+            @NotEmpty String username,
+            @NotNull Integer currentPage,
+            @NotNull Integer pageSize
+    );
 
     /**
      * 修改兴趣点信息
