@@ -13,7 +13,6 @@ import javax.validation.constraints.NotNull;
  */
 public interface InterestPointSocialService {
 
-
     /**
      * 兴趣点的浏览量增加 1
      * @param username 用户名
