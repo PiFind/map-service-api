@@ -31,6 +31,13 @@ public interface InterestPointCommentService {
     );
 
     /**
+     * 评论点赞
+     * @param username 用户名
+     * @return 无
+     */
+    R<Void> likeComment(String username);
+
+    /**
      * 发表评论
      * @param username 用户名
      * @param dto 评论信息

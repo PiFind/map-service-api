@@ -9,6 +9,11 @@ import lombok.Data;
 public class InterestPointCommentDTO {
 
     /**
+     * 评论ID
+     */
+    private Long id;
+
+    /**
      * 兴趣点 ID
      */
     private Long interestPointId;
