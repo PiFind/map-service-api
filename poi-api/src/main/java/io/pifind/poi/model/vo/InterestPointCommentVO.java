@@ -25,10 +25,16 @@ public class InterestPointCommentVO {
     private String username;
 
     /**
-     * 用户头像
+     * 兴趣点ID
      */
     @JsonSerialize(using = ToStringSerializer.class)
     private Long interestPointId;
+
+    /**
+     * 上级ID
+     */
+    @JsonSerialize(using = ToStringSerializer.class)
+    private Long superiorId;
 
     /**
      * 评论内容
