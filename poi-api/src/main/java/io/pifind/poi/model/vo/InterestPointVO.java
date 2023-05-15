@@ -76,6 +76,16 @@ public class InterestPointVO {
     private List<String> tels;
 
     /**
+     * LOGO 图片
+     */
+    private String logo;
+
+    /**
+     * 北京图片
+     */
+    private String background;
+
+    /**
      * 图片
      */
     private List<String> images;
