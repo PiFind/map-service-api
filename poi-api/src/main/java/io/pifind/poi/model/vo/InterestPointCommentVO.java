@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import io.pifind.poi.constant.PoiCommentStatusEnum;
 import lombok.Data;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -59,11 +60,11 @@ public class InterestPointCommentVO {
     /**
      * 创建时间
      */
-    private String createTime;
+    private Date createTime;
 
     /**
      * 更新时间
      */
-    private String updateTime;
+    private Date updateTime;
 
 }
